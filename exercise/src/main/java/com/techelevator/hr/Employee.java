@@ -72,11 +72,12 @@ public class Employee extends Person {
         double total = 0.0;
         for(Map.Entry<String, Double> balance : servicesRendered.entrySet()){
             if(balance.getKey().equalsIgnoreCase("walking")){
-                total += Math.round(balance.getValue() * 100.0)/100.0;
+                double walkingDiscount = balance.getValue() * .5;
+                total += (Math.round(walkingDiscount * 100.0)/100.0);
             }else {
                 total += balance.getValue();
             }
         }
-        return total;
+        return Math.round(total * 100.0)/100.0;
     }
 }
