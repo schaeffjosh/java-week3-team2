@@ -23,6 +23,20 @@ public class EmployeeTest {
     }
 
     @Test
+    public void getBalanceDueWholeNumbers(){
+        //Arrange
+        Employee testObject = new Employee("Ian", "Mcgreal");
+        Map<String, Double> balances = new HashMap<String, Double>();
+        balances.put("Walking", 10.00);
+        balances.put("Grooming", 69.00);
+        balances.put("Sitting", 45.00);
+        //Act
+        double balance = testObject.getBalanceDue(balances);
+        //Assert
+        Assert.assertEquals(119, balance, 0);
+    }
+
+    @Test
     public void getBalanceEmptyKeyNoValue(){
         //Arrange
         Customer testObject = new Customer("Ian", "Mcgreal");
