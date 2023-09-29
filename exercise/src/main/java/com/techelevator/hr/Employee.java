@@ -2,6 +2,7 @@ package com.techelevator.hr;
 
 import com.techelevator.Person;
 
+import java.text.DecimalFormat;
 import java.util.Map;
 
 public class Employee extends Person {
@@ -71,7 +72,8 @@ public class Employee extends Person {
         double total = 0.0;
         for(Map.Entry<String, Double> balance : servicesRendered.entrySet()){
             if(balance.getKey().equalsIgnoreCase("walking")){
-                total += balance.getValue()/2;
+                DecimalFormat half = new DecimalFormat("0.00");
+                total += Double.parseDouble(half.format(balance.getValue()));
             }else {
                 total += balance.getValue();
             }
