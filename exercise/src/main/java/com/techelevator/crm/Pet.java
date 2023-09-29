@@ -24,7 +24,6 @@ public class Pet {
         String listOfVax= "";
         if(vaccinations.size() > 0) {
            listOfVax = vaccinations.toString().replace("[", "").replace("]", "");
-
         }
         return listOfVax;
     }
